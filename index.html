@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beta PCs — Custom Builds, Repairs &amp; Upgrades</title>
-<meta name="description" content="Beta PCs — prebuilt gaming PCs, custom builds, repairs, and upgrades. Forever in beta, forever improving.">
+<title>betapcs &amp; Upgrades</title>
+<meta name="description" content="Beta PCs — prebuilt gaming PCs, custom builds, repairs, and upgrades.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2317151F'/%3E%3Ccircle cx='9' cy='9' r='2' fill='%23FF5C5C'/%3E%3Ccircle cx='16' cy='9' r='2' fill='%23F5A623'/%3E%3Ccircle cx='23' cy='9' r='2' fill='%232FBE6B'/%3E%3Crect x='6' y='14' width='20' height='12' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,6 @@
     --font-body:'IBM Plex Sans',sans-serif;
     --font-mono:'IBM Plex Mono',monospace;
   }
-
   *,*::before,*::after{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;scroll-padding-top:90px;}
   @media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth;} }
@@ -38,16 +37,10 @@
   a{color:inherit;text-decoration:none;}
   button{font:inherit;background:none;border:none;color:inherit;cursor:pointer;}
   img{max-width:100%;display:block;}
-
   ::selection{background:var(--accent);color:var(--ink);}
-
   :focus-visible{outline:3px solid var(--accent-2);outline-offset:3px;border-radius:3px;}
-
-  /* skip link */
   .skip-link{position:absolute;left:-9999px;top:0;background:var(--accent);color:var(--ink);padding:12px 20px;font-family:var(--font-mono);font-weight:700;z-index:200;border-radius:0 0 6px 0;}
   .skip-link:focus{left:0;}
-
-  /* ---------- title bar ---------- */
   .titlebar{position:sticky;top:0;z-index:50;background:var(--ink);}
   .titlebar__inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:14px 24px;}
   .titlebar__dots{display:flex;gap:6px;flex-shrink:0;}
@@ -65,31 +58,22 @@
   .mobile-menu{background:var(--ink);border-top:1px solid rgba(255,255,255,0.15);padding:18px 24px 22px;display:flex;flex-direction:column;gap:16px;}
   .mobile-menu a{color:#fff;font-family:var(--font-mono);font-size:0.9rem;}
   .mobile-menu[hidden]{display:none;}
-
   @media (max-width:780px){
     .titlebar__nav{display:none;}
     .titlebar__toggle{display:inline-flex;}
   }
-
-  /* ---------- window ---------- */
   .window{max-width:1100px;margin:28px auto 0;background:var(--window-bg);border:2.5px solid var(--ink);border-radius:10px;box-shadow:10px 10px 0 var(--ink);overflow:hidden;}
   @media (max-width:1148px){ .window{margin:20px 16px 0;} }
   @media (max-width:640px){ .window{box-shadow:5px 5px 0 var(--ink);border-width:2px;margin:14px 10px 0;} }
-
   main section{padding:72px 44px;}
   main section + section{border-top:1.5px dashed rgba(23,21,31,0.28);}
   @media (max-width:640px){ main section{padding:52px 22px;} }
-
   .eyebrow{font-family:var(--font-mono);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-2);font-weight:600;margin-bottom:12px;}
   .section-heading{font-size:clamp(1.6rem,1.2rem + 1.8vw,2.4rem);font-weight:800;max-width:16ch;}
   .section-sub{color:var(--muted);max-width:56ch;margin-top:14px;font-size:1rem;line-height:1.6;}
-
-  /* reveal-on-scroll (progressive enhancement) */
   .reveal{opacity:1;transform:none;}
   .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease;}
   .js .reveal.is-visible{opacity:1;transform:none;}
-
-  /* ---------- buttons ---------- */
   .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-weight:600;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.03em;padding:13px 22px;border:2px solid var(--ink);border-radius:var(--radius);background:var(--panel-bg);color:var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .12s ease, box-shadow .12s ease;}
   .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);}
   .btn:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink);}
@@ -99,40 +83,22 @@
   .btn--sm:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink);}
   .btn--lg{padding:17px 30px;font-size:0.9rem;}
   .btn--block{width:100%;justify-content:center;}
-
-  /* ---------- hero ---------- */
   .hero{padding-top:64px;}
-  .status-badge{display:inline-flex;align-items:center;gap:9px;background:var(--panel-bg);border:1.5px solid var(--ink);border-radius:999px;padding:9px 18px;font-family:var(--font-mono);font-size:0.74rem;font-weight:600;letter-spacing:0.02em;box-shadow:3px 3px 0 var(--ink);transition:transform .12s ease, box-shadow .12s ease;margin-bottom:26px;}
-  .status-badge:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
-  .status-dot{width:9px;height:9px;border-radius:50%;background:var(--ok);flex-shrink:0;}
-  .status-dot--warn{background:var(--warn);}
-  .status-dot--bad{background:var(--bad);}
   .hero h1{font-size:clamp(2.3rem,1.5rem + 3.8vw,4rem);font-weight:900;max-width:15ch;}
   .hero h1 em{font-style:normal;color:var(--accent);}
   .hero .lede{margin-top:20px;max-width:620px;font-size:clamp(1.02rem,0.94rem + 0.4vw,1.2rem);color:var(--muted);line-height:1.6;}
   .cta-row{display:flex;flex-wrap:wrap;gap:16px;margin:32px 0;}
-  .stat-strip{display:flex;border:1.5px solid var(--ink);border-radius:var(--radius);overflow:hidden;max-width:600px;background:var(--panel-bg);box-shadow:4px 4px 0 var(--ink);margin-top:8px;}
-  .stat-strip li{flex:1;padding:16px 10px;text-align:center;border-right:1px dashed var(--ink);}
-  .stat-strip li:last-child{border-right:none;}
-  .stat-strip strong{display:block;font-family:var(--font-mono);font-size:1.25rem;color:var(--accent-2);}
-  .stat-strip span{display:block;font-size:0.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;margin-top:5px;}
-  .fineprint{font-size:0.74rem;color:var(--muted);margin-top:12px;}
-  @media (max-width:520px){ .stat-strip{flex-wrap:wrap;} .stat-strip li{flex:1 1 50%;border-bottom:1px dashed var(--ink);} .stat-strip li:nth-child(2){border-right:none;} }
-
-  /* ---------- grids & cards ---------- */
   .grid{display:grid;gap:24px;margin-top:36px;}
   .grid--3{grid-template-columns:repeat(3,1fr);}
   @media (max-width:900px){ .grid--3{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:640px){ .grid--3{grid-template-columns:1fr;} }
-
   .card{background:var(--panel-bg);border:1.5px solid var(--ink);border-radius:var(--radius);padding:26px 24px;box-shadow:4px 4px 0 var(--ink);transition:transform .15s ease, box-shadow .15s ease;}
   .card:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 var(--ink);}
   .card h3{font-size:1.2rem;margin-bottom:10px;}
   .card p{color:var(--muted);line-height:1.55;margin-bottom:18px;}
   .card__link{font-family:var(--font-mono);font-weight:600;font-size:0.82rem;color:var(--accent-2);}
   .card__link:hover{text-decoration:underline;}
-
-  .build-card{background:var(--panel-bg);border:1.5px solid var(--ink);border-radius:var(--radius);overflow:hidden;box-shadow:4px 4px 0 var(--ink);transition:transform .15s ease, box-shadow .15s ease;display:flex;flex-direction:column;}
+  .build-card{background:var(--panel-bg);border:1.5px solid var(--ink);border-radius:var(--radius);overflow:hidden;box-shadow:4px 4px 0 var(--ink);transition:transform .15s ease, box-shadow .15s ease;display:flex;flex-direction:column;max-width:380px;}
   .build-card:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 var(--ink);}
   .build-card__bar{background:var(--ink);color:#fff;font-family:var(--font-mono);font-size:0.72rem;padding:9px 14px;display:flex;align-items:center;gap:9px;letter-spacing:0.01em;}
   .build-card__dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;}
@@ -143,30 +109,16 @@
   .specs li::before{content:"› ";color:var(--accent-2);font-weight:700;}
   .build-card__footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;}
   .price{font-family:var(--font-mono);font-weight:700;font-size:0.92rem;}
-
-  .quote{background:var(--panel-bg);border:1.5px solid var(--ink);border-radius:var(--radius);padding:24px;box-shadow:4px 4px 0 var(--ink);}
-  .quote p{font-size:1rem;line-height:1.55;color:var(--ink);}
-  .quote p::before{content:"\201C";} 
-  .quote p::after{content:"\201D";}
-  .quote footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--font-mono);font-size:0.8rem;}
-  .stars{color:var(--accent);letter-spacing:1px;}
-
-  /* ---------- about ---------- */
   .about p{max-width:64ch;color:var(--muted);font-size:1.05rem;line-height:1.7;margin-top:18px;}
-
-  /* ---------- contact ---------- */
   .contact p.section-sub{margin-bottom:0;}
   .contact-actions{margin-top:30px;}
   .socials{display:flex;gap:22px;margin-top:22px;flex-wrap:wrap;}
   .socials a{font-family:var(--font-mono);font-size:0.82rem;color:var(--accent-2);text-transform:uppercase;letter-spacing:0.03em;}
   .socials a:hover{text-decoration:underline;}
-
-  /* ---------- footer ---------- */
   .site-footer{background:var(--ink);color:rgba(255,255,255,0.85);padding:34px 44px;}
   @media (max-width:640px){ .site-footer{padding:28px 22px;} }
   .site-footer__top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:18px;}
   .footer-logo{font-family:var(--font-display);font-weight:900;font-size:1.1rem;color:#fff;letter-spacing:0.01em;}
-  .footer-tag{font-family:var(--font-mono);font-size:0.72rem;color:rgba(255,255,255,0.5);margin-top:5px;}
   .site-footer nav{display:flex;gap:18px;flex-wrap:wrap;}
   .site-footer nav a{font-family:var(--font-mono);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.04em;color:rgba(255,255,255,0.72);}
   .site-footer nav a:hover{color:#fff;}
@@ -175,14 +127,13 @@
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
-
 <header class="titlebar">
   <div class="titlebar__inner">
     <a href="#hero" style="display:flex;align-items:center;gap:14px;" aria-label="Beta PCs — back to top">
       <span class="titlebar__dots" aria-hidden="true">
         <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
       </span>
-      <span class="titlebar__title">beta_pcs.exe <span class="titlebar__version">— v0.9.4 (unstable)</span></span>
+      <span class="titlebar__title">beta_pcs.exe</span>
     </a>
     <nav class="titlebar__nav" aria-label="Primary">
       <ul>
@@ -203,137 +154,68 @@
     <a href="#contact" class="btn btn--accent btn--block">Get a Quote</a>
   </div>
 </header>
-
 <div class="window">
   <main id="main-content">
-
     <section id="hero" class="hero reveal">
-      <button class="status-badge" id="statusBadge" type="button" aria-label="System status, click to check again">
-        <span class="status-dot" id="statusDot"></span>
-        <span id="statusText">ALL SYSTEMS: PROBABLY FINE</span>
-      </button>
-      <h1>Computers that (<em>mostly</em>) just work.</h1>
-      <p class="lede">We build them, fix them, and upgrade them — no confusing tech-speak, no $400 bill for turning it off and back on again.</p>
+      <h1>cool mini pcs and others</h1>
+      <p class="lede">pretty cheap mini computers</p>
       <div class="cta-row">
         <a href="#builds" class="btn btn--accent">Get a Build</a>
         <a href="#contact" class="btn btn--outline">Book a Repair</a>
       </div>
-      <ul class="stat-strip">
-        <li><strong>500+*</strong><span>builds shipped</span></li>
-        <li><strong>4.9/5**</strong><span>avg rating</span></li>
-        <li><strong>0</strong><span>PCs harmed making this site</span></li>
-      </ul>
-      <p class="fineprint">*we started counting last tuesday. **out of a possible 4.9.</p>
     </section>
-
     <section id="services" class="services reveal">
       <p class="eyebrow">// services</p>
-      <h2 class="section-heading">Pick your difficulty.</h2>
+      <h2 class="section-heading">what we do</h2>
       <div class="grid grid--3">
         <article class="card">
           <h3>Prebuilt PCs</h3>
-          <p>Tested, set up, and ready to go. Just plug it in and pretend you built it yourself.</p>
+          <p>Tested and ready to go.</p>
           <a href="#contact" class="card__link">Open →</a>
         </article>
         <article class="card">
           <h3>Custom Builds</h3>
-          <p>Tell us your budget and your dream specs. We’ll gently talk you out of the dream specs and build something great anyway.</p>
+          <p>Tell us your budget and specs.</p>
           <a href="#contact" class="card__link">Open →</a>
         </article>
         <article class="card">
           <h3>Repairs &amp; Upgrades</h3>
-          <p>Weird fan noises, blue screens, mystery slowdowns — bring it in. We’ve seen worse. Probably.</p>
+          <p>Bring it in if it’s acting up.</p>
           <a href="#contact" class="card__link">Open →</a>
         </article>
       </div>
     </section>
-
     <section id="builds" class="builds reveal">
       <p class="eyebrow">// featured builds</p>
-      <h2 class="section-heading">Ready-to-ship builds</h2>
-      <p class="section-sub">Starter picks. Every build is fully custom on request — these are just the ones we’re proud of this week.</p>
-      <div class="grid grid--3">
+      <h2 class="section-heading">ready-to-ship</h2>
+      <div class="grid" style="grid-template-columns:1fr; max-width:400px;">
         <article class="build-card">
-          <div class="build-card__bar"><span class="build-card__dot"></span>budget_goblin.exe</div>
+          <div class="build-card__bar"><span class="build-card__dot"></span>ezcheat_500.exe</div>
           <div class="build-card__body">
-            <h3>The Budget Goblin</h3>
-            <p>Handles your games and your 40 open tabs without complaint. Great first build.</p>
+            <h3>EzCheat 500</h3>
+            <p>the only thing currently for sale</p>
             <ul class="specs">
-              <li>CPU: Ryzen 5</li>
-              <li>GPU: RTX 4060</li>
-              <li>RAM: 16GB</li>
+              <li>works as advertised</li>
+              <li>simple setup</li>
+              <li>no extra nonsense</li>
             </ul>
             <div class="build-card__footer">
-              <span class="price">from $899</span>
-              <a href="#contact" class="btn btn--sm btn--accent">Get this →</a>
-            </div>
-          </div>
-        </article>
-        <article class="build-card">
-          <div class="build-card__bar"><span class="build-card__dot"></span>the_overkill.exe</div>
-          <div class="build-card__body">
-            <h3>The Overkill</h3>
-            <p>You don’t need this much power. You want it. We respect that.</p>
-            <ul class="specs">
-              <li>CPU: Ryzen 9</li>
-              <li>GPU: RTX 4080</li>
-              <li>RAM: 32GB</li>
-            </ul>
-            <div class="build-card__footer">
-              <span class="price">from $2,199</span>
-              <a href="#contact" class="btn btn--sm btn--accent">Get this →</a>
-            </div>
-          </div>
-        </article>
-        <article class="build-card">
-          <div class="build-card__bar"><span class="build-card__dot"></span>it_just_works.exe</div>
-          <div class="build-card__body">
-            <h3>It Just Works (Allegedly)</h3>
-            <p>Reliable, quiet, and boring in the best way. Made for people who just want to get stuff done.</p>
-            <ul class="specs">
-              <li>CPU: Ryzen 7</li>
-              <li>GPU: RTX 4070</li>
-              <li>RAM: 32GB</li>
-            </ul>
-            <div class="build-card__footer">
-              <span class="price">from $1,449</span>
+              <span class="price">$40 – $70</span>
               <a href="#contact" class="btn btn--sm btn--accent">Get this →</a>
             </div>
           </div>
         </article>
       </div>
-      <p class="fineprint">Prices are starting estimates — final quote depends on what you actually pick.</p>
     </section>
-
-    <section id="testimonials" class="testimonials reveal">
-      <p class="eyebrow">// user reviews</p>
-      <h2 class="section-heading">What people say (after we asked nicely)</h2>
-      <div class="grid grid--3">
-        <blockquote class="quote">
-          <p>Ordered a custom build, got a great PC, and got mildly judged for my cable management. Worth it.</p>
-          <footer><strong>Marcus T.</strong><span class="stars">★★★★★</span></footer>
-        </blockquote>
-        <blockquote class="quote">
-          <p>Fixed my laptop in a day. Docked one star for the comments about my 47 open Chrome tabs.</p>
-          <footer><strong>Priya K.</strong><span class="stars">★★★★☆</span></footer>
-        </blockquote>
-        <blockquote class="quote">
-          <p>No more dying-whale noise from my tower. Genuinely life changing.</p>
-          <footer><strong>@definitely_not_a_bot</strong><span class="stars">★★★★★</span></footer>
-        </blockquote>
-      </div>
-    </section>
-
     <section id="about" class="about reveal">
       <p class="eyebrow">// about</p>
-      <h2 class="section-heading">The beta pcs story</h2>
-      <p>We started in a garage. Honestly, we’re still kind of in a garage. Beta PCs exists because computer shops kept either overcharging, over-explaining, or both. So we just build solid PCs, fix broken ones, and try to make you laugh while we’re at it. We’re always tweaking, always improving — which is really just a nice way of saying we’re forever in beta.</p>
+      <h2 class="section-heading">the beta pcs story</h2>
+      <p>we build solid pcs, fix broken ones, and keep things simple.</p>
     </section>
-
     <section id="contact" class="contact reveal">
       <p class="eyebrow">// contact</p>
-      <h2 class="section-heading">Let’s fix (or build) your computer</h2>
-      <p class="section-sub">Send us a message and we’ll get back to you — usually before your PC catches fire, ideally before it starts smoking.</p>
+      <h2 class="section-heading">hit us up</h2>
+      <p class="section-sub">send a message and we’ll get back to you.</p>
       <div class="contact-actions">
         <a href="mailto:hello@betapcs.com" class="btn btn--accent btn--lg">Email Us →</a>
       </div>
@@ -343,14 +225,11 @@
         <a href="#">Twitter/X @betapcs</a>
       </div>
     </section>
-
   </main>
-
   <footer class="site-footer">
     <div class="site-footer__top">
       <div>
         <p class="footer-logo">BETA PCS</p>
-        <p class="footer-tag">forever in beta, forever improving</p>
       </div>
       <nav aria-label="Footer">
         <a href="#services">Services</a>
@@ -360,15 +239,12 @@
       </nav>
     </div>
     <div class="site-footer__bottom">
-      <p>© <span id="year">2026</span> Beta PCS. All rights reserved (we think — still reading the fine print ourselves).</p>
-      <p id="uptime">session uptime: 00:00 (no crashes yet)</p>
+      <p>© <span id="year">2026</span> Beta PCS</p>
     </div>
   </footer>
 </div>
-
 <script>
 (function(){
-  // mobile menu toggle
   var toggle = document.getElementById('menuToggle');
   var menu = document.getElementById('mobileMenu');
   if(toggle && menu){
@@ -384,26 +260,6 @@
       });
     });
   }
-
-  // status badge cycler
-  var statuses = [
-    { text:'ALL SYSTEMS: PROBABLY FINE', dot:'' },
-    { text:'ALL SYSTEMS: MAKING A WEIRD NOISE', dot:'status-dot--warn' },
-    { text:'ALL SYSTEMS: DEFINITELY ON FIRE (JK)', dot:'status-dot--bad' }
-  ];
-  var idx = 0;
-  var badge = document.getElementById('statusBadge');
-  var dot = document.getElementById('statusDot');
-  var text = document.getElementById('statusText');
-  if(badge){
-    badge.addEventListener('click', function(){
-      idx = (idx + 1) % statuses.length;
-      text.textContent = statuses[idx].text;
-      dot.className = 'status-dot ' + statuses[idx].dot;
-    });
-  }
-
-  // scroll reveal, respecting reduced motion
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var revealEls = document.querySelectorAll('.reveal');
   if(reduceMotion || !('IntersectionObserver' in window)){
@@ -419,20 +275,6 @@
     }, { threshold:0.15, rootMargin:'0px 0px -40px 0px' });
     revealEls.forEach(function(el){ io.observe(el); });
   }
-
-  // session uptime ticker
-  var uptimeEl = document.getElementById('uptime');
-  if(uptimeEl){
-    var start = Date.now();
-    setInterval(function(){
-      var elapsed = Math.floor((Date.now() - start) / 1000);
-      var m = String(Math.floor(elapsed / 60)).padStart(2,'0');
-      var s = String(elapsed % 60).padStart(2,'0');
-      uptimeEl.textContent = 'session uptime: ' + m + ':' + s + ' (no crashes yet)';
-    }, 1000);
-  }
-
-  // footer year
   var yearEl = document.getElementById('year');
   if(yearEl){ yearEl.textContent = new Date().getFullYear(); }
 })();
